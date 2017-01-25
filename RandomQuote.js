@@ -2,15 +2,13 @@ var colors = ['rgb(46,98,235)', 'rgb(255,128,0)', 'rgb(255,128,128)', 'rgb(138, 
 
 $(function () {
     "use strict";
-    //设置随机颜色
-    //var colorIndex = Math.floor(Math.random() * colors.length);
-    //$('body').css('background-color', colors[colorIndex]);
+    $('img#load').hide();
     $('span.glyphicon').click(function () {
-        var colorIndex = Math.floor(Math.random() * colors.length);
-        $('body').animate({
-            backgroundColor: colors[colorIndex]
-        }, 2000);
-        //$('body').css('background-color', colors[colorIndex]);
+        //隐藏点击按钮
+        $(this).hide();
+        $('img#load').show();
+
+
         $.ajax({
             headers: {
                 'X-Mashape-Key': 'OivH71yd3tmshl9YKzFH7BTzBVRQp1RaKLajsnafgL2aPsfP9V',
@@ -18,6 +16,8 @@ $(function () {
             },
             url: "https://andruxnet-random-famous-quotes.p.mashape.com/cat=",
             success: function (response) {
+                $('img#load').hide();
+                $('span.glyphicon').show();
                 response = JSON.parse(response);
                 $('#text').animate({
                     opacity: 0
@@ -35,7 +35,10 @@ $(function () {
                     }, 1000);
                     $(this).text(response.author);
                 });
-
+                var colorIndex = Math.floor(Math.random() * colors.length);
+                $('body').animate({
+                    backgroundColor: colors[colorIndex]
+                }, 2000);
             }
         });
 
