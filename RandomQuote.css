@@ -1,0 +1,44 @@
+body {
+    font-family: "Microsoft Yahei";
+    text-align: center;
+}
+
+.glyphicon {
+    top: 12px;
+    left: 17px;
+    cursor: pointer;
+}
+
+.glyphicon:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+div#quote {
+    width: 80%;
+    margin: 60px auto 30px auto;
+    text-align: left;
+    font-size: 80px;
+    position: relative;
+    word-break: break-all;
+}
+
+div#author {
+    width: 70%;
+    margin: auto;
+    text-align: right;
+    font-size: 40px;
+}
+
+span#btn {
+    font-size: 20px;
+    border: 3px solid #4a4343;
+    border-radius: 5px;
+    margin: 33px auto;
+}
+
+span#btn:hover {
+    font-weight: 600;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
